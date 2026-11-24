@@ -6,10 +6,10 @@
 
 **Важно:** вам потребуются два дистрибутива: Ubuntu и ALT Рабочая станция 11. 
 
-По ссылке [https://www.altlinux.org/Releases] загрузите ALT Рабочая станция версии 11 с ядром 6.12. После этого установите ОС, например, записав образ на SD-карту или SSD-диск.
+По ссылке https://www.altlinux.org/Releases загрузите ALT Рабочая станция версии 11 с ядром 6.12. После этого установите ОС, например, записав образ на SD-карту или SSD-диск.
 **Примечание:** автор инструкции столкнулся с уже установленным дистрибутивом, потому такие параметры CIX System Manager, как режим загрузки, неизвестны. Уже установленный образ, однако, работает и с ACPI, и с Device Tree.
 <br>
-Далее, скачайте образ Ubuntu для Orange Pi 6 Plus по ссылке [https://drive.google.com/drive/folders/14vrKI_sFjvkravyDRIKskRYVMDfJB2kK] и распакуйте его на другой диск.
+Далее, скачайте образ Ubuntu для Orange Pi 6 Plus по ссылке https://drive.google.com/drive/folders/14vrKI_sFjvkravyDRIKskRYVMDfJB2kK и распакуйте его на другой диск.
 <br>
 Оба диска должны быть вставлены в компьютер.
 
@@ -84,7 +84,7 @@ EOF
 Далее нужно отредактировать несколько файлов вручную. Ниже предоставлен список требуемых изменений.
 
 
-armchina-npu/aipu.c
+armchina-npu/aipu.c <br>
 
 Добавлено на строке 29:
 ```c
@@ -93,7 +93,7 @@ armchina-npu/aipu.c
 #endif
 ```
 
-armchina-npu/aipu_priv.c
+armchina-npu/aipu_priv.c <br>
 
 Начиная со строки 80, следующее содержимое:
 
@@ -129,7 +129,7 @@ armchina-npu/aipu_priv.c
 ```
 
 
-armchina-npu/zhouyi/v3.c
+armchina-npu/zhouyi/v3.c <br>
 На строке 309 добавлено следующее содержимое (добавить в функцию static void zhouyi_v3_initialize(...)):
 ```c
 
@@ -141,8 +141,9 @@ armchina-npu/zhouyi/v3.c
         }
 ```
 
-armchina-npu/sky1/sky1.c
+armchina-npu/sky1/sky1.c <br>
 На строке 212 изменён тип sky1_npu_devfreq_remove на void, в конце функции стоит return; вместо return 0;
+<br>
 
 Начиная со строки 414, следующее содержимое:
 ```c
@@ -157,6 +158,7 @@ armchina-npu/sky1/sky1.c
     dev_info(&p_dev->dev, "skip pm_runtime_put after probe to keep NPU cores enabled\n");
 #endif /* CONFIG_PM */
 ```
+<br>
 
 На строке 457 return 0; изменено на return;
 
@@ -236,9 +238,9 @@ sudo dmesg | grep -i aipu | tail -n 100
 Готово! Вы успешно сделали поддержку NPU на ALT Linux под управлением Orange Pi 6 Plus!
 
 ## Полезные материалы
-Настройка userspace: [instructions/userspace.md]
-Запуск моделей: [instructions/model_start.md]
-Часто задаваемые вопросы: [instructions/faq.md]
+[Настройка userspace]([instructions/userspace.md])<br>
+[Запуск моделей](instructions/model_start.md)<br>
+[Часто задаваемые вопросы](instructions/faq.md)<br>
 
-Автор оригинальной инструкции: [https://github.com/stavrmoris/]
+Автор оригинальной инструкции: https://github.com/stavrmoris/
 

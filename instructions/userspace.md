@@ -12,9 +12,12 @@ wget "$BASE/image_process.py" -P utils/
 wget "$BASE/tools.py" -P utils/
 wget "$BASE/__init__.py" -P utils/
 ```
-Перенесите папку utils в папку ai_model_hub_25_Q3 с изменением всех файлов. Далее откройте requirements.txt и сделайте следующее:
+Перенесите папку utils в папку ai\_model\_hub\_25\_Q3 с изменением всех файлов. Далее откройте requirements.txt и сделайте следующее:
+
 - Удалите указание версии numpy, но не сам numpy;
+
 - Добавьте следующие названия модулей через перенос строки: tqdm matplotlib streamlit.
+
 
 ## Этап 2: Создание userspace
 
@@ -29,7 +32,7 @@ source .venv/bin/activate
 
 ## Этап 3: Установка модулей
 
-Установите модули для работами с моделями. Зайдите в ai_model_hub_25_Q3 и выполните следующее:
+Установите модули для работами с моделями. Зайдите в ai\_model\_hub\_25\_Q3 и выполните следующее:
 ```bash
 python3 -m pip install -r requirements.txt
 ```
