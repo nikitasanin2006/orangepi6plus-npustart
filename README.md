@@ -238,7 +238,7 @@ sudo dmesg | grep -i aipu | tail -n 100
 Готово! Вы успешно сделали поддержку NPU на ALT Linux под управлением Orange Pi 6 Plus!
 
 ## Полезные материалы
-[Настройка userspace]([instructions/userspace.md])<br>
+[Настройка userspace](instructions/userspace.md)<br>
 [Запуск моделей](instructions/model_start.md)<br>
 [Часто задаваемые вопросы](instructions/faq.md)<br>
 
