@@ -1,17 +1,18 @@
 # Часто задаваемые вопросы
 
-Q: При запуске драйвера выходит ошибка "aipu: disagrees about version of symbol module_layout" или "Invalid module format"
+Q: При запуске драйвера выходит ошибка "aipu: disagrees about version of symbol module_layout" или "Invalid module format" <br>
 A: Убедитесь, что драйвер скомпилирован под нужную версию ядра.
 
 Q: При запуске драйвера выходит ошибка:
 armchina CIXH4000:00: unidentified hardware version number: 5
-armchina CIXH4000:00: aipu real probe failed, ret: -22
+armchina CIXH4000:00: aipu real probe failed, ret: -22 <br>
 A: Поскольку мы запускаем драйвер только на Orange Pi 6 Plus, его номер модели всегда будет 5. Скорее всего, вы не совсем верно заменили содержимое файла sky1.c. Сделайте, пожалуйста, жёсткую привязку к номеру модели компьютера, в точности применив изменения в README.
 
-Q: При тестировании модели не удаётся найти файл libaipudrv.so.
+Q: При тестировании модели не удаётся найти файл libaipudrv.so. <br>
 A: Запустите поиск по системе, скопируйте найденный файл в /usr/lib и запустите "sudo ldconfig".
 
-Q: Тестирование модели привело к результату: 0it \[00:00, ?it/s\]
+Q: Тестирование модели привело к результату: 0it \[00:00, ?it/s\] <br>
 A: Скорее всего, у вас не скачаны датасеты. Ознакомьтесь с файлом [model_start.md](model_start.md).
 
-
+Q: Не всё whl-файлы возможно установить. <br>
+A: Попробуйте настроить [другой userspace](userspace.md), но с версией Python 3.11.
